@@ -53,8 +53,13 @@ function getGameId(userId) {
     return game.id;
 }
 
-function leaveGame(gameId) {
-    gamesPool = gamesPool.filter(game => game.id !== gameId);
+function leaveGame(userId) {
+    thereIsOpenGame = false;
+    const gameToRemove = gamesPool.find(game => game.users.includes(userId));
+    if (gameToRemove) {
+        gamesPool = gamesPool.filter(game => game.id !== gameToRemove.id);
+    }
+    return gameToRemove ? gameToRemove.id : newGame.id;
 }
 
 function getNicknames(gameId) {

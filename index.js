@@ -8,7 +8,6 @@ var {
     getNicknames
 } = require('./utils/game');
 
-
 io.on("connection", (socket) => {
     socket.on('join', (nickname, category, numberOfPairs) => {
         const { newGame, playerNumber } = joinGame(socket.id, nickname, category, numberOfPairs);

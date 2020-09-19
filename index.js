@@ -9,7 +9,7 @@ var {
 } = require('./utils/game');
 
 io.on("connection", (socket) => {
-    console.log('connect');
+    console.log(socket.id, 'connected');
     socket.on('join', (nickname, category, numberOfPairs) => {
         const { newGame, playerNumber } = joinGame(socket.id, nickname, category, numberOfPairs);
         socket.join(newGame.id);
@@ -29,6 +29,7 @@ io.on("connection", (socket) => {
     })
 
     socket.on('disconnect', () => {
+        console.log(socket.id, 'disconnected');
         const gameId = leaveGame(socket.id);
         socket.to(gameId).emit('gameEnd');
     });

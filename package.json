@@ -1,20 +1,21 @@
 {
-  "name": "zikaron_server",
-  "version": "1.0.0",
-  "description": "socket server for zikaron game online matches",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Avishai Nudelman",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.4",
-    "socket.io": "^2.3.0"
-  },
-  "devDependencies": {}
+    "name": "zikaron_server",
+    "version": "1.0.0",
+    "description": "socket server for zikaron game online matches",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Avishai Nudelman",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.4",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {}
 }
